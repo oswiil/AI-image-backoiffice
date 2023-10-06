@@ -11,12 +11,12 @@ services:
       - db
     environment:
       MARIADB_ROOT_PASSWORD: example
-      DATABASE_CLIENT: 
-      DATABASE_USERNAME:
+      DATABASE_CLIENT: mysql
+      DATABASE_USERNAME: strapi
       DATABASE_HOST: db
       DATABASE_PORT: 3306
-      DATABASE_NAME: strapi
-      DATABASE_PASSWORD  : 
+      DATABASE_NAME: aidb
+      DATABASE_PASSWORD: aidb 
 
 
   db:
@@ -28,9 +28,9 @@ services:
     environment:
     MARIADB_ROOT_HOST
       MARIADB_ROOT_PASSWORD: example
-      MARIADB_USER:
-      MARIADB_DATABASE:
-      MARIADB_PASSWORD:
+      MARIADB_USER: strapi
+      MARIADB_DATABASE: aidb
+      MARIADB_PASSWORD: aidb
       
 
 
