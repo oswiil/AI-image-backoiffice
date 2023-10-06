@@ -25,8 +25,8 @@ services:
     restart: always
     volumes:
     - $MARIADB_PATH:/var/lib/mysql
-    environment:
-    MARIADB_ROOT_HOST
+    environment: 
+      MARIADB_ROOT_HOST: example
       MARIADB_ROOT_PASSWORD: example
       MARIADB_USER: strapi
       MARIADB_DATABASE: aidb
