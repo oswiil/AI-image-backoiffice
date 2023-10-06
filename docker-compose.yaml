@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  appbackoffice: 
+    container_name: appbackoffice
+    build: .
+    ports:
+      - 8080:1337
+    restart: always
+    link:
+      - db
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      DATABASE_CLIENT: 
+      DATABASE_USERNAME:
+      DATABASE_HOST: db
+      DATABASE_PORT: 3306
+      DATABASE_NAME: strapi
+      DATABASE_PASSWORD  : 
+
+
+  db:
+    container_name: mariadb
+    image: mariadb
+    restart: always
+    volumes:
+    - $MARIADB_PATH:/var/lib/mysql
+    environment:
+    MARIADB_ROOT_HOST
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_USER:
+      MARIADB_DATABASE:
+      MARIADB_PASSWORD:
+      
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
+    link:
+      - db
