@@ -3,7 +3,7 @@ version: '3'
 services:
   appbackoffice: 
     container_name: appbackoffice
-    build: .
+    image: oswil/aimagegallerybackoffice
     ports:
       - 8080:1337
     restart: always
